@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.BdrMain">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Main">
+            <items>
+                  <Menu mnemonicParsing="false" text="Manage">
+                    <items>
+                      <MenuItem fx:id="menuMainManageTransport" mnemonicParsing="false" text="Trasport" />
+                        <MenuItem fx:id="menuMainManageBranch" mnemonicParsing="false" text="Branch" />
+                        <MenuItem fx:id="menuMainManageParty" mnemonicParsing="false" text="Party" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuMainViewBallot" mnemonicParsing="false" text="View Ballots" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="menuQuit" mnemonicParsing="false" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Elector">
+            <items>
+              <MenuItem fx:id="menuElectorUpdateContact" mnemonicParsing="false" text="Update Contact" />
+                  <MenuItem fx:id="menuContactElector" mnemonicParsing="false" text="Contact Elector" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
+         <children>
+            <TableView id="electorInfo" layoutY="38.0" prefHeight="762.0" prefWidth="1280.0">
+               <columns>
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="63.0" text="ID" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="59.0" text="First Name" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="68.0" text="LastName" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="78.0" text="Address" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="91.0" text="Ballot Number" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="91.0" text="Serial" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="246.0" text="Ride ID" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="210.0" text="Ride Hour" />
+                  <TableColumn minWidth="6.0" prefWidth="124.0" text="Email" />
+                  <TableColumn editable="false" minWidth="6.0" prefWidth="213.0" text="Phone Number" />
+               </columns>
+            </TableView>
+            <TextField fx:id="id" prefHeight="39.0" prefWidth="225.0" promptText="Elector ID" />
+            <Button fx:id="ballotInfoBtm" layoutX="224.0" mnemonicParsing="false" onAction="#ballotInfoAct" prefHeight="39.0" prefWidth="105.0" text="Ballot Info" />
+            <Button fx:id="updateContactBtn" layoutX="329.0" mnemonicParsing="false" onAction="#updateContactAct" text="Update Contact" />
+            <Button fx:id="contactElectorBtn" layoutX="478.0" mnemonicParsing="false" onAction="#contactElectorAct" text="Contact Elector" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
