@@ -7,8 +7,8 @@ public class ConstsDbElector {
 	protected static final String DB_FILEPATH = getDBPath();
 	public static final String CONN_STR = "jdbc:ucanaccess://" + DB_FILEPATH + ";COLUMNORDER=DISPLAY";
 	public static String SQL_SEL_ELECTOR = "SELECT * FROM TblElector";
-	public static String SQL_SEL_ELECTOR_BALLOT = "SELECT * FROM TblElector WHERE BallotNum ";
-	public static String SQL_SEL_ELECTOR_ID = "SELECT * FROM TblElector WHERE ID ";
+	public static String SQL_SEL_ELECTOR_BALLOT = "SELECT * FROM TblElector WHERE BallotNum=";
+	public static String SQL_SEL_ELECTOR_ID = "SELECT * FROM TblElector WHERE ID=";
 	public ConstsDbElector() {
 		// TODO Auto-generated constructor stub
 	}

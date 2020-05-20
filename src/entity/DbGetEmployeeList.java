@@ -34,9 +34,11 @@ public class DbGetEmployeeList {
 		 rs.getInt(i++), rs.getInt(i++), rs.getInt(i++)));
 		 }
 		 } catch (SQLException e) {
+			 System.out.print("Employee Read Failure");
 		 e.printStackTrace();
 		 }
 		} catch (ClassNotFoundException e) {
+			 System.out.print("Employee Class Not Found");
 		 e.printStackTrace();
 		}
 

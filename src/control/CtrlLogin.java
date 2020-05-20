@@ -8,6 +8,7 @@ import entity.DbGetEmployeeList;
 import entity.Employee;
 
 class CtrlLogin {
+	//TODO HASH permission for greater security
 	private int permission = -5555;
 	public int getPermission()
 	{

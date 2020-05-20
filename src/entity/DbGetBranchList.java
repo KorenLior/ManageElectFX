@@ -26,10 +26,20 @@ public class DbGetBranchList {
 
 		 while (rs.next()) {
 		 int i = 1;
-
-		 results.add(new Branch(rs.getInt(i++), rs.getInt(i++),rs.getInt(i++)));
+		 Branch result = null;
+		 try
+		 {
+			 result = new Branch(rs.getInt(i++), rs.getInt(i++),rs.getInt(i++));
+			 
+		 }
+		 catch (Exception e) {
+			// TODO: handle exception
+			 System.out.println("Branch readDb Failure");
+		 }
+		 results.add(result);
 		 }
 		 } catch (SQLException e) {
+			 System.out.println("getBranches() readFromDb Failure");
 		 e.printStackTrace();
 		 }
 		} catch (ClassNotFoundException e) {

@@ -21,7 +21,7 @@ public class BdrMainCtrl{
 	{
 		
 	}
-	public void contactElectorHndlr()
+	public void contactElectorHndlr() throws Exception
 	{
 		String idTxt = electorId.getText();
 		if (idTxt.isEmpty())

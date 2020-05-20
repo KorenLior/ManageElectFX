@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.IOException;
 
+
 import boundary.BdrElectorInfoPopup;
 import boundary.BdrLoginCtrl;
 import boundary.BdrMainCtrl;
@@ -24,6 +25,7 @@ public class Main extends Application {
 		try {
 			this.primaryStage = primaryStage;
 			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
+			loader.setController(new BdrLoginCtrl());
 			AnchorPane loginLayout = loader.load();
 			this.primaryStage.setScene(new Scene(loginLayout));
 			this.primaryStage.setTitle("ManageElectFX");
@@ -32,12 +34,23 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	public static void main(String[] args) {
+		launch(args);
+	}
+//===============================================WIP===========================================================
+//TODO:
+//
+//
+//
+//===========================================My Stuff==============================================================
+		
 	public static void mainScreen()
 	{
 		try {
 			 
 			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrMainFXML.fxml").toURI().toURL());
 			//FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
+			loader.setController(new BdrMainCtrl());
 			VBox mainLayout = loader.load();
 			primaryStage.setScene(new Scene(mainLayout));
 			primaryStage.show();
@@ -48,42 +61,33 @@ public class Main extends Application {
 	}
 	
 	
-	public static void main(String[] args) {
-		launch(args);
-	}
+	
 	public static void electorInfoPopup()
 	{
-		Stage popupwindow = new Stage();
-		
 		try {
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfo.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
 			
-			AnchorPane popup = loader.load();
-			popupwindow.setTitle("Contact Elector Form");
-			popupwindow.setScene(new Scene(popup));
-			BdrElectorInfoPopup bdrElectorInfoPopup = loader.getController();
-			bdrElectorInfoPopup.setStage();
-			popupwindow.show();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
+			Stage electorInfoStage = new Stage();
+			AnchorPane electorInfoLayout = loader.load();
+
+			electorInfoStage.setScene(new Scene(electorInfoLayout));
+			electorInfoStage.show();
+	    } catch (IOException e) {
+	        System.out.println("Failed to open Elector Info Popup");
+	    }
 	}
-	public static void electorInfoPopup(int idInt) {
-		Stage popupwindow = new Stage();
+	public static void electorInfoPopup(int idInt)
+	{
 		try {
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfo.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
+			Stage electorInfoStage = new Stage();
+			AnchorPane electorInfoLayout = loader.load();
+
+			electorInfoStage.setScene(new Scene(electorInfoLayout));
 			
-			AnchorPane popup = loader.load();
-			popupwindow.setTitle("Contact Elector Form");
-			popupwindow.setScene(new Scene(popup));
-			BdrElectorInfoPopup bdrElectorInfoPopup = loader.getController();
-			bdrElectorInfoPopup.setStage(idInt);
-			popupwindow.show();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
+			electorInfoStage.show();
+	    } catch (IOException e) {
+	        System.out.println("Failed to open Elector Info Popup2");
+	    }
 	}
 }

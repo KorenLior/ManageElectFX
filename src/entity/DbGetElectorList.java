@@ -27,9 +27,11 @@ public class DbGetElectorList {
 				 results.add(res);
 		 }
 		 } catch (SQLException e) {
+			 System.out.println("getElectors() readFromDb Failure");
 		 e.printStackTrace();
 		 }
 		} catch (ClassNotFoundException e) {
+			System.out.println("getElectors() readFromDb ClassNotFound Failure");
 		 e.printStackTrace();
 		}
 
@@ -50,10 +52,12 @@ public class DbGetElectorList {
 				 results.add(res);
 		 }
 		 } catch (SQLException e) {
+			 System.out.println("getElectors(int ballotNum) readFromDb Failure");
 		 e.printStackTrace();
 		 }
 		} catch (ClassNotFoundException e) {
-		 e.printStackTrace();
+			System.out.println("getElectors(int ballotNum) readFromDb ClassNotFound Failure");
+			e.printStackTrace();
 		}
 
 		return results;
@@ -63,40 +67,58 @@ public class DbGetElectorList {
 		Elector result = null;
 		 try {
 		 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+		 //System.out.println(ConstsDbElector.SQL_SEL_ELECTOR_ID
+		 //+ electorId);
 		 try (Connection conn = DriverManager.getConnection(ConstsDbBranch.CONN_STR);
-
+				 
 		 PreparedStatement stmt = conn.prepareStatement(ConstsDbElector.SQL_SEL_ELECTOR_ID
-				 + String.valueOf(electorId));
+				 + electorId);
 
 		 ResultSet rs = stmt.executeQuery()) {
-			 rs.next();
-			 result = readFromDb(rs);
+			 while(rs.next()) {
+				 result = readFromDb(rs);
+			 }
 			 } catch (SQLException e) {
+				 System.out.println("Failure");
 		 e.printStackTrace();
 		 }
 		} catch (ClassNotFoundException e) {
 		 e.printStackTrace();
 		}
-
 		return result;
 	}
 	
 	
 	private Elector readFromDb(ResultSet rs) throws SQLException {
-		
 			 int i = 1;
+			 int id;
+			 String firstName;
+			 String lastName;
+			 String address;
+			 int phoneNum;
+			 int ballotNum;
+			 int serialNum;
+			 int rideId;
+			 Time rideTime;
+			 Elector result = null;
+			 try {
 
-			 int id = rs.getInt(i++);
-			 String firstName = rs.getString(i++);
-			 String lastName = rs.getString(i++);
-			 String address = rs.getString(i++);
-			 int phoneNum = rs.getInt(i++);
-			 int ballotNum = rs.getInt(i++);
-			 int serialNum = rs.getInt(i++);
-			 int rideId = rs.getInt(i++);
-			 Time rideTime = rs.getTime(i++);
-		
-		return new Elector(id, ballotNum, serialNum, rideId, rideTime,
-				firstName, lastName, address, phoneNum);
+
+			 id = rs.getInt(i++);
+			 firstName = rs.getString(i++);
+			 lastName = rs.getString(i++);
+			 address = rs.getString(i++);
+			 phoneNum = rs.getInt(i++);
+			 ballotNum = rs.getInt(i++);
+			 serialNum = rs.getInt(i++);
+			 rideId = rs.getInt(i++);
+			 rideTime = rs.getTime(i++);
+			 result = new Elector(id, ballotNum, serialNum, rideId, rideTime,
+						firstName, lastName, address, phoneNum);
+			 }
+			 catch (Exception e) {
+				System.out.println("DbGetElector.readFromDd Failure");
+			}
+			 return result;
 	}
 }

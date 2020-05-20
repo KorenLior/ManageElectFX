@@ -6,7 +6,8 @@ public class ConstsDbNewElectorInfo {
 	protected static final String DB_FILEPATH = getDBPath();
 	public static final String CONN_STR = "jdbc:ucanaccess://" + DB_FILEPATH + ";COLUMNORDER=DISPLAY";
 	public static final String SQL_INS_ELECTORINFO =  "INSERT INTO TblElectorInfo "
-+ "(CallDate, GotAnswer, PlanToVote, SupportTheParty, InterestInClass, NeedRide, PickupFrom, PickupTo, ElectorId, EmployeeId) ";
++ "([InfoNumber],[CallDate], [GotAnswer], [PlanToVote], [SupportTheParty], [InterestInClass], [NeedRide], [PickupFrom], [PickupTo], [ElectorID], [EmployeeID])"
++ " VALUES" ;
 	
 	private static String getDBPath() {
 		 try {
