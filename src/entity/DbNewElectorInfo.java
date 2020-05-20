@@ -53,12 +53,13 @@ public class DbNewElectorInfo {
 			 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			 try (Connection conn = DriverManager.getConnection(ConstsDbNewElectorInfo.CONN_STR);
 					 
-				PreparedStatement stmt = conn.prepareCall(ConstsDbNewElectorInfo.SQL_INS_ELECTORINFO)) {
+				CallableStatement stmt = conn.prepareCall(ConstsDbNewElectorInfo.SQL_INS_ELECTORINFO)) {
 				 System.out.println("Inputbug1:");
 	/* (CallDate, GotAnswer, PlanToVote, SupportTheParty, InterestInClass, NeedRide, PickupFrom, PickupTo, ElectorId, EmployeeId)*/
 			
 		int i = 1;
 		 //stmt.setString(i++, callDate);
+		stmt.setInt(i++,0);
 		stmt.setString(i++, "TEST");
 		stmt.setString(i++, "TEST1");
 		stmt.setString(i++, "TEST2");
