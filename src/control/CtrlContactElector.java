@@ -21,7 +21,6 @@ class CtrlContactElector {
 	public CtrlContactElector(int employeeId, int electorId, String callDate, 
 			String gotAnswer, String planToVote, String supportTheParty,
 			String interestInClass, String needRide, String pickupFrom, String pickupTo) {
-		System.out.println("InputBug2");
 		DbNewElectorInfo dbNewElectorInfo = new DbNewElectorInfo(employeeId, electorId,
 				gotAnswer, planToVote, supportTheParty, interestInClass,
 				needRide, pickupFrom, pickupTo, callDate);
