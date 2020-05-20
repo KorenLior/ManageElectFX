@@ -18,9 +18,7 @@ public class DbGetElectorList {
 		 try {
 		 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 		 try (Connection conn = DriverManager.getConnection(ConstsDbBranch.CONN_STR);
-
 		 PreparedStatement stmt = conn.prepareStatement(ConstsDbElector.SQL_SEL_ELECTOR);
-
 		 ResultSet rs = stmt.executeQuery()) {
 			 while (rs.next()) {
 				 Elector res = readFromDb(rs);
