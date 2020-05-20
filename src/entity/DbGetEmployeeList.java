@@ -29,8 +29,8 @@ public class DbGetEmployeeList {
 		 while (rs.next()) {
 		 int i = 1;
 
-		 results.add(new Employee(rs.getInt(i++), rs.getDate(i++),
-		 rs.getString(i++), rs.getString(i++), rs.getBoolean(i++),
+		 results.add(new Employee(rs.getInt(i++), rs.getString(i++),
+		 rs.getString(i++), rs.getString(i++), rs.getString(i++),
 		 rs.getInt(i++), rs.getInt(i++), rs.getInt(i++)));
 		 }
 		 } catch (SQLException e) {

@@ -99,7 +99,7 @@ public class DbGetElectorList {
 			 int ballotNum;
 			 int serialNum;
 			 int rideId;
-			 Time rideTime;
+			 String rideTime;
 			 Elector result = null;
 			 try {
 
@@ -112,7 +112,7 @@ public class DbGetElectorList {
 			 ballotNum = rs.getInt(i++);
 			 serialNum = rs.getInt(i++);
 			 rideId = rs.getInt(i++);
-			 rideTime = rs.getTime(i++);
+			 rideTime = rs.getString(i++);
 			 result = new Elector(id, ballotNum, serialNum, rideId, rideTime,
 						firstName, lastName, address, phoneNum);
 			 }

@@ -23,10 +23,10 @@ public class DbGetSystem {
 	
 		String partyName = null;
 		int managerId = -5555;
-		Time startTime = null; 
-		Time endTime = null;
-		Date electionCalendarStart = null;
-		Date electionCalendarEnd = null;
+		String startTime = null; 
+		String endTime = null;
+		String electionCalendarStart = null;
+		String electionCalendarEnd = null;
 		 try {
 			 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			 try (Connection conn = DriverManager.getConnection(ConstsDbSystem.CONN_STR);
@@ -39,9 +39,9 @@ public class DbGetSystem {
 					int ser = rs.getInt(i++);
 					partyName = rs.getString(i++);
 					managerId = rs.getInt(i++);
-					startTime = rs.getTime(i++);
-					endTime = rs.getTime(i++);
-					electionCalendarStart = rs.getDate(i++);
+					startTime = rs.getString(i++);
+					endTime = rs.getString(i++);
+					electionCalendarStart = rs.getString(i++);
 			 
 		 } catch (SQLException e) {
 		 e.printStackTrace();

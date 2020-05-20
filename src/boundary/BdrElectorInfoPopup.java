@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.function.UnaryOperator;
 
 import application.Main;
+import entity.Elector;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -50,7 +51,6 @@ public class BdrElectorInfoPopup {
 	
 	
 	public BdrElectorInfoPopup() {
-		loadedId = Main.ctrlInterface.getId();
 	}
 	
 	public void setStage(int id)
@@ -65,10 +65,14 @@ public class BdrElectorInfoPopup {
 	public void btnLoadAct()
 	{
 		String idTxt = tfId.getText();
-
+		int idInt = Integer.parseInt(idTxt);
 		//System.out.println("bug1111: idInt = " + idInt);
 		String electorTxt = Main.ctrlInterface.getElector(idTxt);
 		electorLabel.setText(electorTxt);
+		if (electorTxt!=null)
+		{
+			loadedId = idInt;
+		}
 	}
 	public void idTxtHandler()
 	{

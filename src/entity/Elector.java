@@ -5,10 +5,10 @@ import java.sql.Time;
 public class Elector {
 
 	int id, ballotNum, serialNum, rideID;
-	Time RideHour;
+	String RideHour;
 	String firstName, lastName, address;
 	int phoneNumber;
-	public Elector(int id, int ballotNum, int serialNum, int rideID, Time rideHour, String firstName, 
+	public Elector(int id, int ballotNum, int serialNum, int rideID, String rideHour, String firstName, 
 			String lastName, String address, int phoneNumber) {
 		super();
 		this.id = id;
@@ -21,10 +21,10 @@ public class Elector {
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 	}
-	public Time getRideHour() {
+	public String getRideHour() {
 		return RideHour;
 	}
-	public void setRideHour(Time rideHour) {
+	public void setRideHour(String rideHour) {
 		RideHour = rideHour;
 	}
 	

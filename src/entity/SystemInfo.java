@@ -7,9 +7,9 @@ public final class SystemInfo {
 
 	private String partyName;
 	private int managerId;
-	private Time startTime, endTime;
-	private Date date = null;
-	public SystemInfo(String partyName, int managerId, Time startTime, Time endTime, Date electionCalendarStart) {
+	private String startTime, endTime;
+	private String date = null;
+	public SystemInfo(String partyName, int managerId, String startTime, String endTime, String electionCalendarStart) {
 		this.endTime = endTime;
 		this.startTime = startTime;
 		this.managerId = managerId;
@@ -22,16 +22,14 @@ public final class SystemInfo {
 	public int getManagerId() {
 		return managerId;
 	}
-	public Time getStartTime() {
-		Time result = (Time)startTime.clone();
-		return result;
+	public String getStartTime() {
+		return startTime;
 	}
-	public Time getEndTime() {
-		Time result = (Time)endTime.clone();
-		return result;
+	public String getEndTime() {
+		return endTime;
 	}
-	public Date getCalendar() {
-		Date result = (Date)date.clone();
-		return result;
+	public String getCalendar() {
+		
+		return date;
 	}
 }

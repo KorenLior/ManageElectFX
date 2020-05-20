@@ -4,16 +4,16 @@ import java.sql.Date;
 
 public class Employee {
 	private int id;
-	private Date birthDate;
+	private String birthDate;
 	private String gender;
 	private String nationality;
-	private boolean car;
+	private String car;
 	private int status, numChildren, branchNum;
 	public Employee(int id, 
-			Date birthDate, 
+			String birthDate, 
 			String gender, 
 			String nationality, 
-			boolean car, 
+			String car, 
 			int status, 
 			int numChildren,
 			int branchNum) {
@@ -29,7 +29,7 @@ public class Employee {
 	public int getId() {
 		return id;
 	}
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 	public String getGender() {
@@ -38,7 +38,7 @@ public class Employee {
 	public String getNationality() {
 		return nationality;
 	}
-	public boolean isCar() {
+	public String isCar() {
 		return car;
 	}
 	public int getStatus() {
