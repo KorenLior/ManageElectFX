@@ -23,7 +23,7 @@ public class BdrTransportRepMenu{
 		try (Connection conn = DriverManager.getConnection(ConstsDbBranch.CONN_STR)) {
 		JasperPrint print = JasperFillManager.fillReport(
 
-		getClass().getResourceAsStream("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\TransportationRep.jasper"),
+		getClass().getResourceAsStream("src\\boundary\\TransportationRep.jasper"),
 		 new HashMap<String, Object>(), conn);
 		JFrame frame = new JFrame("Customer Orders Report");
 		frame.getContentPane().add(new JRViewer(print));

@@ -27,7 +27,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Main.primaryStage = primaryStage;
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
 			loader.setController(new BdrLoginCtrl());
 			AnchorPane loginLayout = loader.load();
 			Main.primaryStage.setScene(new Scene(loginLayout));
@@ -51,7 +51,7 @@ public class Main extends Application {
 	{
 		try {
 			 
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrMainFXML.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("src\\boundary\\BdrMainFXML.fxml").toURI().toURL());
 			//FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
 			loader.setController(new BdrMainCtrl());
 			VBox mainLayout = loader.load();
@@ -68,7 +68,7 @@ public class Main extends Application {
 	public static void electorInfoPopup()
 	{
 		try {
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
 			loader.setController(new BdrElectorInfoPopup());
 			Stage electorInfoStage = new Stage();
 			AnchorPane electorInfoLayout = loader.load();
@@ -83,7 +83,7 @@ public class Main extends Application {
 	public static void electorInfoPopup(int idInt)
 	{
 		try {
-			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
+			FXMLLoader loader = new FXMLLoader(new File("src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
 			Stage electorInfoStage = new Stage();
 			AnchorPane electorInfoLayout = loader.load();
 

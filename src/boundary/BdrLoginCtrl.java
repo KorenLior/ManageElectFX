@@ -18,8 +18,11 @@ public class BdrLoginCtrl{
 	{
 		
 		String idTxt = employeeId.getText();
+		if (idTxt==null)
+		{
+			return;
+		}
 		int idInt = Integer.parseInt(idTxt);
-		
 		Main.ctrlInterface.login(idInt);
 		if (Main.ctrlInterface.getPermmission()>=0)
 		{
