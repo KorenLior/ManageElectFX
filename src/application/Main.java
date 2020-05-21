@@ -96,7 +96,9 @@ public class Main extends Application {
 	}
 	public static void transportationRep()
 	{
+		/*TODO: fix Jasper Dependencies Library
 		Frame rep = (new BdrTransportRepMenu()).PrintReport();
 		rep.setVisible(true);
+		*/
 	}
 }
