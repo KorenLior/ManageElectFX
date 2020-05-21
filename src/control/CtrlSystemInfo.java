@@ -6,7 +6,7 @@ class CtrlSystemInfo {
 	private SystemInfo systemInfo;
 	public CtrlSystemInfo() {
 		DbGetSystem dbGetSystem = new DbGetSystem();
-		systemInfo = dbGetSystem.getSystem();
+		systemInfo = DbGetSystem.getSystem();
 	}
 	public String getPartyName()
 	{

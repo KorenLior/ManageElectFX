@@ -1,6 +1,5 @@
 package entity;
 
-import java.sql.Date;
 
 public class Employee {
 	private int id;

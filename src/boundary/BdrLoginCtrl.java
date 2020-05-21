@@ -18,12 +18,18 @@ public class BdrLoginCtrl{
 	{
 		
 		String idTxt = employeeId.getText();
-		if (idTxt==null)
+
+		int idInt;
+		try{
+			idInt = Integer.parseInt(idTxt);
+			Main.ctrlInterface.login(idInt);
+		}
+		catch(Exception e)
 		{
+			System.out.print("not a valid ID");
 			return;
 		}
-		int idInt = Integer.parseInt(idTxt);
-		Main.ctrlInterface.login(idInt);
+		
 		if (Main.ctrlInterface.getPermmission()>=0)
 		{
 			Main.mainScreen();

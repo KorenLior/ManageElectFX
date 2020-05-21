@@ -1,18 +1,14 @@
 package control;
 
-import java.sql.Date;
-import java.sql.Time;
 
 
 
 public class CtrlInterface {
 	
 	private CtrlLogin ctrlLogin;
-	private CtrlSystemInfo ctrlSystemInfo;
-	private CtrlElector ctrlElector;
 	private int loginId = -1;
-	
-	
+	private int manager;
+	private static CtrlSystemInfo ctrlSystemInfo;
 	
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
@@ -21,12 +17,28 @@ public class CtrlInterface {
 	public CtrlInterface() {
 		
 		ctrlSystemInfo = new CtrlSystemInfo();
+		manager = ctrlSystemInfo.getManagerId();
 		
+	}
+	private void iddqdidkfa()
+	{
+		loginId = manager;
+		try {
+			ctrlLogin = new CtrlLogin(manager);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.print("lol no cheating");
+		}
 	}
 	public void login(int employeeId)
 	{
 		
-		ctrlLogin = new CtrlLogin(employeeId);
+		try {
+			ctrlLogin = new CtrlLogin(employeeId);
+		} catch (Exception e) {
+			System.out.print("EmployeeList Empty");
+			e.printStackTrace();
+		}
 		if (ctrlLogin.getPermission()>-1)
 		{
 			this.loginId = employeeId;

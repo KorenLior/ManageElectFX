@@ -1,19 +1,15 @@
 package application;
 	
-import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 
 import boundary.BdrElectorInfoPopup;
 import boundary.BdrLoginCtrl;
 import boundary.BdrMainCtrl;
-import boundary.BdrTransportRepMenu;
 import control.CtrlInterface;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Modality;
-import javafx.stage.Popup;
+
 import javafx.stage.Stage;
 
 import javafx.scene.Scene;

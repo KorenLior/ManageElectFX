@@ -2,13 +2,28 @@ package entity;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Time;
 
-public class DbNewElectorInfo {
+public class DbNewElectorInfoEntry {
+	private int employeeId, electorId;
+	String gotAnswer, planToVote, supportTheParty, interestInClass,
+	needRide, pickupFrom, pickupTo, callDate;
+	public DbNewElectorInfoEntry(int employeeId, int electorId, String gotAnswer, String planToVote,
+			String supportTheParty, String interestInClass, String needRide, String pickupFrom, String pickupTo,
+			String callDate) {
+		super();
+		this.employeeId = employeeId;
+		this.electorId = electorId;
+		this.gotAnswer = gotAnswer;
+		this.planToVote = planToVote;
+		this.supportTheParty = supportTheParty;
+		this.interestInClass = interestInClass;
+		this.needRide = needRide;
+		this.pickupFrom = pickupFrom;
+		this.pickupTo = pickupTo;
+		this.callDate = callDate;
+	}
 	/*
 	public DbNewElectorInfo(int employeeId, int electorId, String gotAnswer, String planToVote, String supportTheParty,
 			String interestInClass, String needRide, Time pickupFrom, Time pickupTo, Date callDate) {
@@ -45,8 +60,7 @@ public class DbNewElectorInfo {
 				 }
 	}
 */
-	public DbNewElectorInfo(int employeeId, int electorId, String gotAnswer, String planToVote, String supportTheParty,
-			String interestInClass, String needRide, String pickupFrom, String pickupTo, String callDate) {
+	public void SetEntry(){
 		 try {
 			 Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 			 try (Connection conn = DriverManager.getConnection(ConstsDbNewElectorInfo.CONN_STR);

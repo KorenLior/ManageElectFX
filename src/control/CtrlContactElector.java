@@ -1,9 +1,6 @@
 package control;
 
-import java.sql.Date;
-import java.sql.Time;
-
-import entity.DbNewElectorInfo;
+import entity.DbNewElectorInfoEntry;
 
 
 class CtrlContactElector {
@@ -17,13 +14,13 @@ class CtrlContactElector {
 				needRide, pickupFrom, pickupTo, callDate);
 		
 	}
-*/
-	public CtrlContactElector(int employeeId, int electorId, String callDate, 
-			String gotAnswer, String planToVote, String supportTheParty,
-			String interestInClass, String needRide, String pickupFrom, String pickupTo) {
-		DbNewElectorInfo dbNewElectorInfo = new DbNewElectorInfo(employeeId, electorId,
+*/	CtrlContactElector(int employeeId, int electorId, String gotAnswer, String planToVote,
+		String supportTheParty, String interestInClass, String needRide, String pickupFrom, String pickupTo,
+		String callDate) {
+		DbNewElectorInfoEntry dbNewElectorInfoEntry = new DbNewElectorInfoEntry(employeeId, electorId,
 				gotAnswer, planToVote, supportTheParty, interestInClass,
 				needRide, pickupFrom, pickupTo, callDate);
+		dbNewElectorInfoEntry.SetEntry();
 	}
 	
 }

@@ -1,18 +1,15 @@
 package boundary;
 
-import java.io.IOException;
+
 import java.util.function.UnaryOperator;
 
 import application.Main;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
-
-import javafx.scene.layout.VBox;
 
 
 public class BdrMainCtrl{
@@ -32,7 +29,16 @@ public class BdrMainCtrl{
 		}
 		else
 		{
-			int idInt = Integer.parseInt(idTxt);
+			int idInt;
+			try
+			{
+				idInt = Integer.parseInt(idTxt);
+			}
+			catch(Exception e)
+			{
+				System.out.print("not a valid ID");
+				return;
+			}
 			Main.electorInfoPopup(idInt);
 		}
 	}

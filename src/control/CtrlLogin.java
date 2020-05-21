@@ -10,13 +10,14 @@ import entity.Employee;
 class CtrlLogin {
 	//TODO HASH permission for greater security
 	private int permission = -5555;
+	private ArrayList<Employee> emplyeeList;
 	public int getPermission()
 	{
 		return permission;
 	}
-	public CtrlLogin(int id) {
+	public CtrlLogin(int id) throws Exception {
 		
-		ArrayList<Employee> emplyeeList = (new DbGetEmployeeList()).getEmployees();
+		emplyeeList = DbGetEmployeeList.getEmployees();
 		new DbGetBranchList();
 		ArrayList<Branch> branchList = DbGetBranchList.getBranches();
 		CtrlSystemInfo ctrlSystemInfo = new CtrlSystemInfo();
@@ -27,26 +28,29 @@ class CtrlLogin {
 			permission = 3;
 			return;
 		}
+		for (Branch branch:branchList)
+		{
+			
+			if (branch.getManagerId() == id)
+			{
+				permission = 2;
+				return;
+			}
+			if (branch.getTransportRepId() == id)
+			{
+				permission = 1;
+				return;
+			}
+		}
+		if (emplyeeList.isEmpty()) {
+			throw new Exception("EmployeeList empty");
+		}
 		for(Employee employee:emplyeeList)
 		{
 			
 			if (employee.getId() == id)
 			{
 				permission = 0;
-				for (Branch branch:branchList)
-				{
-					if (branch.getBranchNum() == employee.getBranchNum())
-					{
-						if (branch.getManagerId() == id)
-						{
-							permission = 2;
-						}
-						if (branch.getTransportRepId() == id)
-						{
-							permission = 1;
-						}
-					}
-				}
 			}
 		}
 	}

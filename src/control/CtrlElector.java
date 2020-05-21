@@ -1,6 +1,5 @@
 package control;
 
-import entity.ConstsDbElector;
 import entity.DbGetElectorList;
 import entity.Elector;
 
