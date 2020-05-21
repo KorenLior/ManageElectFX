@@ -1,18 +1,21 @@
 package application;
 	
+import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
-
+import java.sql.Connection;
 
 import boundary.BdrElectorInfoPopup;
 import boundary.BdrLoginCtrl;
 import boundary.BdrMainCtrl;
+import boundary.BdrTransportRepMenu;
 import control.CtrlInterface;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -23,13 +26,13 @@ public class Main extends Application {
 	private static Stage primaryStage;
 	public void start(Stage primaryStage) {
 		try {
-			this.primaryStage = primaryStage;
+			Main.primaryStage = primaryStage;
 			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrLoginFXML.fxml").toURI().toURL());
 			loader.setController(new BdrLoginCtrl());
 			AnchorPane loginLayout = loader.load();
-			this.primaryStage.setScene(new Scene(loginLayout));
-			this.primaryStage.setTitle("ManageElectFX");
-			this.primaryStage.show();
+			Main.primaryStage.setScene(new Scene(loginLayout));
+			Main.primaryStage.setTitle("ManageElectFX");
+			Main.primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -66,7 +69,7 @@ public class Main extends Application {
 	{
 		try {
 			FXMLLoader loader = new FXMLLoader(new File("C:\\Users\\liork\\OneDrive\\Desktop\\Haifa Uni\\InfoSystemDev\\HW2\\ManageElectFX\\src\\boundary\\BdrElectorInfoFXML.fxml").toURI().toURL());
-			
+			loader.setController(new BdrElectorInfoPopup());
 			Stage electorInfoStage = new Stage();
 			AnchorPane electorInfoLayout = loader.load();
 
@@ -74,6 +77,7 @@ public class Main extends Application {
 			electorInfoStage.show();
 	    } catch (IOException e) {
 	        System.out.println("Failed to open Elector Info Popup");
+	        e.printStackTrace();
 	    }
 	}
 	public static void electorInfoPopup(int idInt)
@@ -89,5 +93,10 @@ public class Main extends Application {
 	    } catch (IOException e) {
 	        System.out.println("Failed to open Elector Info Popup2");
 	    }
+	}
+	public static void transportationRep()
+	{
+		Frame rep = (new BdrTransportRepMenu()).PrintReport();
+		rep.setVisible(true);
 	}
 }

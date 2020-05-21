@@ -7,6 +7,7 @@ import application.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
@@ -17,6 +18,7 @@ import javafx.scene.layout.VBox;
 public class BdrMainCtrl{
 	public Button contactElectorBtn, updateContactBtn;
 	public TextField electorId;
+	public MenuItem bdrTransportMngHndlr;
 	public BdrMainCtrl()
 	{
 		
@@ -45,7 +47,7 @@ public class BdrMainCtrl{
 	}
 	public void bdrTransportMngHndlr()
 	{
-		//TODO: check user permission lvl. open TransportMng Screen
+		Main.transportationRep();
 	}
 	public void bdrCampaignMngHndlr()
 	{

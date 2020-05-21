@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.BdrElectorInfoPopup">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <CheckBox fx:id="cbContactAnswered" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#cbEnableFormAct" text="Contact Answered" />
       <ChoiceBox fx:id="planToVote" disable="true" layoutX="205.0" layoutY="240.0" prefWidth="150.0" />

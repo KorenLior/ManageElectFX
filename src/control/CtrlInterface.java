@@ -3,7 +3,6 @@ package control;
 import java.sql.Date;
 import java.sql.Time;
 
-import javafx.event.ActionEvent;
 
 
 public class CtrlInterface {
@@ -11,7 +10,7 @@ public class CtrlInterface {
 	private CtrlLogin ctrlLogin;
 	private CtrlSystemInfo ctrlSystemInfo;
 	private CtrlElector ctrlElector;
-	private static int loginId = -1;
+	private int loginId = -1;
 	
 	
 	

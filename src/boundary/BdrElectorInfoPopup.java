@@ -67,7 +67,7 @@ public class BdrElectorInfoPopup {
 		String idTxt = tfId.getText();
 		int idInt = Integer.parseInt(idTxt);
 		//System.out.println("bug1111: idInt = " + idInt);
-		String electorTxt = Main.ctrlInterface.getElector(idTxt);
+		String electorTxt = Main.ctrlInterface.getElector(idInt);
 		electorLabel.setText(electorTxt);
 		if (electorTxt!=null)
 		{
@@ -108,17 +108,17 @@ public class BdrElectorInfoPopup {
 		String date = txtDate.getText();
 		if(loadedId<=0)
 		{
-			System.out.print("InputBug ContactElector employee not logged in");
+			System.out.print("InputBug Elector not loaded");
 			return;
 		}
 		try {
-			if (!(cbContactAnswered.isArmed()))
+			if (!(cbContactAnswered.isSelected()))
 			{
 				Main.ctrlInterface.contactElector(loadedId, date,"No","","","","","","");
 			}
 			else
 			{
-				if (!cbRideRequired.isArmed())
+				if (!cbRideRequired.isSelected())
 				{
 					Main.ctrlInterface.contactElector(loadedId, date,"Yes", planToVote.getValue(),
 							supportParty.getValue(), intrestedInClass.getValue(),
@@ -145,7 +145,7 @@ public class BdrElectorInfoPopup {
 	
 	public void cbEnableFormAct()
 	{
-		if (cbContactAnswered.isArmed())
+		if (cbContactAnswered.isSelected())
 		{
 			planToVote.setDisable(false);
 			supportParty.setDisable(false);
